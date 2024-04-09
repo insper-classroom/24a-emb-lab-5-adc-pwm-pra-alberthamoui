@@ -76,7 +76,7 @@ void uart_task(void *p) {
         xQueueReceive(xQueueAdc, &data, portMAX_DELAY);
 
         data.val = (data.val-2047)/8;
-        int zone_limit = 80;
+        int zone_limit = 170;
         if (data.val <=zone_limit && data.val >= -1*(zone_limit)) {
             data.val = 0;
         }
